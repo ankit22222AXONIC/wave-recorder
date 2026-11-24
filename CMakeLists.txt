@@ -152,7 +152,7 @@ endif()
 set( _OPT "audacity_" )
 
 # Our very own project
-project( Audacity )
+project( Audacity DESCRIPTION "Wave Recorder - Digital Audio Editor" )
 
 if( APPLE )
    # XCode 14 no longer allows building unsigned binaries.

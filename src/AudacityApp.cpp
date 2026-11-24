@@ -815,7 +815,7 @@ static wxArrayString ofqueue;
 // of Audacity.
 //
 
-#define IPC_APPL wxT("audacity")
+#define IPC_APPL wxT("wave-recorder")
 #define IPC_TOPIC wxT("System")
 
 class IPCConn final : public wxConnection
@@ -1325,7 +1325,7 @@ void AudacityApp::ShowSplashScreen() {
    mSplashScreen->SetPosition(wndRect.GetTopLeft());
    // Centered on whichever screen it is on.
    mSplashScreen->Center();
-   mSplashScreen->SetTitle(_("Audacity is starting up..."));
+   mSplashScreen->SetTitle(_("Wave Recorder is starting up..."));
    SetTopWindow(mSplashScreen.get());
    mSplashScreen->Raise();
 }
@@ -1969,7 +1969,7 @@ bool AudacityApp::InitTempDir()
       dialog.ShowModal();
 
       AudacityMessageBox(XO(
-"Audacity is now going to exit. Please launch Audacity again to use the new temporary directory."));
+"Wave Recorder is now going to exit. Please launch Wave Recorder again to use the new temporary directory."));
       return false;
    }
 
@@ -1992,11 +1992,11 @@ bool AudacityApp::InitTempDir()
 
 bool AudacityApp::CreateSingleInstanceChecker(const wxString &dir)
 {
-   wxString name = wxString::Format(wxT("audacity-lock-%s"), wxGetUserId());
+   wxString name = wxString::Format(wxT("wave-recorder-lock-%s"), wxGetUserId());
    mChecker.reset();
    auto checker = std::make_unique<wxSingleInstanceChecker>();
 
-   auto runningTwoCopiesStr = XO("Running two copies of Audacity simultaneously may cause\ndata loss or cause your system to crash.\n\n");
+   auto runningTwoCopiesStr = XO("Running two copies of Wave Recorder simultaneously may cause\ndata loss or cause your system to crash.\n\n");
 
    if (!checker->Create(name, dir))
    {
@@ -2004,9 +2004,9 @@ bool AudacityApp::CreateSingleInstanceChecker(const wxString &dir)
       // whether there is another instance running or not.
 
       auto prompt = XO(
-"Audacity was not able to lock the temporary files directory.\nThis folder may be in use by another copy of Audacity.\n")
+"Wave Recorder was not able to lock the temporary files directory.\nThis folder may be in use by another copy of Wave Recorder.\n")
          + runningTwoCopiesStr
-         + XO("Do you still want to start Audacity?");
+         + XO("Do you still want to start Wave Recorder?");
       int action = AudacityMessageBox(
          prompt,
          XO("Error Locking Temporary Folder"),
@@ -2026,7 +2026,7 @@ bool AudacityApp::CreateSingleInstanceChecker(const wxString &dir)
 
       if (parser->Found(wxT("v")))
       {
-         wxPrintf("Audacity v%s\n", AUDACITY_VERSION_STRING);
+         wxPrintf("Wave Recorder v%s\n", AUDACITY_VERSION_STRING);
          return false;
       }
 
@@ -2093,12 +2093,12 @@ bool AudacityApp::CreateSingleInstanceChecker(const wxString &dir)
       // There is another copy of Audacity running.  Force quit.
 
       auto prompt =  XO(
-"The system has detected that another copy of Audacity is running.\n")
+"The system has detected that another copy of Wave Recorder is running.\n")
          + runningTwoCopiesStr
          + XO(
-"Use the New or Open commands in the currently running Audacity\nprocess to open multiple projects simultaneously.\n");
+"Use the New or Open commands in the currently running Wave Recorder\nprocess to open multiple projects simultaneously.\n");
       AudacityMessageBox(
-         prompt, XO("Audacity is already running"),
+         prompt, XO("Wave Recorder is already running"),
          wxOK | wxICON_ERROR);
 
       return false;
@@ -2465,7 +2465,7 @@ std::unique_ptr<wxCmdLineParser> AudacityApp::ParseCommandLine()
    parser->AddSwitch(wxT("t"), wxT("test"), _("run self diagnostics"));
 
    /*i18n-hint: This displays the Audacity version */
-   parser->AddSwitch(wxT("v"), wxT("version"), _("display Audacity version"));
+   parser->AddSwitch(wxT("v"), wxT("version"), _("display Wave Recorder version"));
 
    /*i18n-hint: This is a list of one or more files that Audacity
     *           should open upon startup */

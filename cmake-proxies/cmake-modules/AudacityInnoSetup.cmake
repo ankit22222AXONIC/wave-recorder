@@ -5,6 +5,7 @@ find_program(
     INNO_SETUP_COMPILER
     NAMES iscc ISCC
     HINTS
+        "$ENV{LOCALAPPDATA}/Programs/Inno Setup 6"
         "C:/Program Files (x86)/Inno Setup 6"
         "C:/Program Files/Inno Setup 6"
 )

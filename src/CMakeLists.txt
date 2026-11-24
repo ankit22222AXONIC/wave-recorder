@@ -1259,7 +1259,11 @@ if(${_OPT}has_whats_new)
    list(APPEND DEFINES PRIVATE HAS_WHATS_NEW )
 endif()
 
-set_target_property_all( ${TARGET} RUNTIME_OUTPUT_NAME ${AUDACITY_NAME} )
+if( CMAKE_SYSTEM_NAME MATCHES "Windows" )
+   set_target_property_all( ${TARGET} RUNTIME_OUTPUT_NAME "wave" )
+else()
+   set_target_property_all( ${TARGET} RUNTIME_OUTPUT_NAME ${AUDACITY_NAME} )
+endif()
 
 organize_source( "${TARGET_ROOT}/.." "include" "${HEADERS}" )
 organize_source( "${TARGET_ROOT}/../resources" "resources" "${RESOURCES}" )

@@ -219,6 +219,11 @@ wxString FileNames::LowerCaseAppNameInPath( const wxString & dirIn){
       int nChars = dir.length() - wxString( "Audacity" ).length();
       dir = dir.Left( nChars ) + "audacity";
    }
+   else if( dir.EndsWith( "Wave Recorder" ) )
+   {
+      int nChars = dir.length() - wxString( "Wave Recorder" ).length();
+      dir = dir.Left( nChars ) + "wave-recorder";
+   }
    return dir;
 }
 

